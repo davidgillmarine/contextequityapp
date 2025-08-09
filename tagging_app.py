@@ -44,6 +44,10 @@ if st.button("Save Tags"):
     st.session_state.tags[index] = selected_tags
     st.success("Tags saved!")
 
+# Comment field
+st.subheader("Add Comment")
+comment_input = st.text_area("Enter your comment", value=st.session_state.comments[index])
+
 # Export tagged data
 if st.button("Export Tagged Data to CSV"):
     tagged_df = df.copy()
