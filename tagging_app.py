@@ -15,10 +15,14 @@ if "tags" not in st.session_state:
     st.session_state.tags = [ [] for _ in range(len(df)) ]
 
 # Title of the app
-st.title("file.name:To")
+st.title("Tagging app")
 
 # Entry navigation
 index = st.number_input("Select entry index", min_value=0, max_value=len(df)-1, value=0)
+
+# Display the File name and To
+st.write(df.loc[index, "file.name"])
+st.write(df.loc[index, "To"])
 
 # Display the description
 st.subheader("Description")
