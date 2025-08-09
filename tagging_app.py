@@ -6,14 +6,16 @@ import pandas as pd
 df = pd.read_csv("kumu_moderators.csv")
 
 # Define the list of tags
-tag_list = ['int.attr', 'relationships', 'wider.partic', 'gov.context', 'hist.context', 'soc.context', 'econ.context', 'eco.context', 'hypothesized', 'evidenced', 'unclear']
+tag_list = ['hypothesized', 'evidenced', 'unclear', 'int.attr', 'relationships',
+'wider.partic', 'gov.context', 'hist.context', 'soc.context',
+'econ.context', 'eco.context', 'equitable.gov', 'moderates.impacts']
 
 # Initialize session state to store tags
 if "tags" not in st.session_state:
     st.session_state.tags = [ [] for _ in range(len(df)) ]
 
 # Title of the app
-st.title("Tagging App for Kumu Moderators Dataset")
+st.title("file.name:To")
 
 # Entry navigation
 index = st.number_input("Select entry index", min_value=0, max_value=len(df)-1, value=0)
