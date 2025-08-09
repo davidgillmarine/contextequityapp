@@ -6,9 +6,7 @@ import pandas as pd
 df = pd.read_csv("kumu_moderators.csv")
 
 # Define the list of tags
-tag_list = ['hypothesized', 'evidenced', 'unclear', 'int.attr', 'relationships',
-'wider.partic', 'gov.context', 'hist.context', 'soc.context',
-'econ.context', 'eco.context', 'equitable.gov', 'moderates.impacts']
+tag_list = ['hypothesized', 'evidenced', 'unclear', 'equitable.gov', 'moderates.impacts']
 
 # Initialize session state to store tags
 if "tags" not in st.session_state:
@@ -28,6 +26,9 @@ st.write(df.loc[index, "To"])
 st.subheader("Description")
 st.write(df.loc[index, "Description"])
 
+# Display current tag
+st.write(df.loc[index, "Tags"])
+
 # Preselect tags from 'From' column if they match tag_list
 preselected = []
 from_value = str(df.loc[index, "From"])
@@ -37,7 +38,7 @@ for tag in tag_list:
 
 # Multiselect for tags
 st.subheader("Select Tags")
-selected_tags = st.multiselect("Choose tags for this entry", options=tag_list, default=st.session_state.tags[index] or preselected)
+selected_tags = st.multiselect("Choose tags for this entry", options=tag_list, default=preselected)
 
 # Save tags
 if st.button("Save Tags"):
