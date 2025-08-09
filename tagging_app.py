@@ -27,7 +27,7 @@ st.subheader("Description")
 st.write(df.loc[index, "Description"])
 
 # Display current tag
-st.write(df.loc[index, "Tags"])
+st.write(df.loc[index, "From"])
 
 # Preselect tags from 'From' column if they match tag_list
 preselected = []
