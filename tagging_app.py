@@ -6,7 +6,7 @@ import pandas as pd
 df = pd.read_csv("kumu_moderators.csv")
 
 # Define the list of tags
-tag_list = [ 'hypothesized', 'evidenced', 'unclear', 'int.attr', 'relationships', 'wider.partic', 'gov.context', 'hist.context', 'soc.context', 'econ.context', 'eco.context']
+tag_list = ['int.attr', 'relationships', 'wider.partic', 'gov.context', 'hist.context', 'soc.context', 'econ.context', 'eco.context', 'hypothesized', 'evidenced', 'unclear']
 
 # Initialize session state to store tags
 if "tags" not in st.session_state:
